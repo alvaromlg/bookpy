@@ -1,3 +1,8 @@
+{% load static from staticfiles %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static "stylesheet/search.css"%} ">
+</head>
+
 <form type="get" action="{% url 'results' %}" style="margin: 0">
     <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
     <button id="search_submit" type="submit" >Submit</button>
