@@ -1,4 +1,5 @@
 import urllib2
+import json
 
 from django.shortcuts import render
 from django.template import loader
@@ -17,9 +18,12 @@ def finder_results(request):
     read = urllib2.urlopen(api)
     read = read.read()
 
+    # Convert to dictionary
+    result = json.loads(read)
+
     context = {
         "looking" : search_box,
-        "result" : read
+        "result" : result
     }
 
 
